@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samitha Rathnayaka | Professional Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+        
+        .skill-badge {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 9px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% + 10px);
+            background: linear-gradient(180deg, #667eea 0%, rgba(102, 126, 234, 0.2) 100%);
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        nav {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .circle-bg {
+            position: fixed;
+            border-radius: 50%;
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            background: #667eea;
+            top: -100px;
+            right: -100px;
+        }
+        
+        .circle-2 {
+            width: 400px;
+            height: 400px;
+            background: #764ba2;
+            bottom: -150px;
+            left: -150px;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <div class="circle-bg circle-1"></div>
+    <div class="circle-bg circle-2"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold">
+                    <span class="gradient-text">SR</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-purple-600 transition font-medium">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-purple-600 transition font-medium">About</a>
+                    <a href="#skills" class="text-gray-700 hover:text-purple-600 transition font-medium">Skills</a>
+                    <a href="#goals" class="text-gray-700 hover:text-purple-600 transition font-medium">Goals</a>
+                    <a href="#contact" class="text-gray-700 hover:text-purple-600 transition font-medium">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="max-w-7xl mx-auto text-center fade-in">
+            <div class="floating mb-8">
+                <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white text-5xl font-bold shadow-2xl">
+                    SR
+                </div>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                Samitha Rathnayaka
+            </h1>
+            <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
+                Motivated Professional | Lifelong Learner | Tech Enthusiast
+            </p>
+            <p class="text-lg text-white/80 mb-12 max-w-2xl mx-auto">
+                Building a future through discipline, adaptability, and continuous growth
+            </p>
+            <div class="flex gap-4 justify-center flex-wrap">
+                <a href="#about" class="cta-button px-8 py-4 text-white rounded-full font-semibold">
+                    Discover More
+                </a>
+                <a href="#contact" class="px-8 py-4 bg-white text-purple-600 rounded-full font-semibold hover:bg-gray-50 transition">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="glass-card rounded-3xl p-8 md:p-12">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 section-title">About Me</h2>
+                <div class="h-6"></div>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    I am a motivated and responsible individual with a strong passion for learning, technology, and structured problem-solving. My approach to tasks reflects patience, curiosity, and a genuine willingness to continuously improve both personal and professional skills.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    With growing awareness of social responsibility and modern digital practices, I aim to develop into a capable and reliable contributor in any professional environment. My personality reflects discipline, adaptability, and respect for formal systems.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    Rather than avoiding challenges, I actively seek accurate information and proper methods to complete tasks effectively. This quality highlights maturity and readiness for future academic and professional responsibilities.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 bg-white/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center section-title">Key Skills</h2>
+            <div class="h-16"></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="skill-badge glass-card p-6 rounded-2xl">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Communication Skills</h3>
+                    <p class="text-gray-600">Clear understanding of instructions and structured, respectful communication, especially in written form.</p>
+                </div>
+                
+                <div class="skill-badge glass-card p-6 rounded-2xl">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Computer & Digital Skills</h3>
+                    <p class="text-gray-600">Proficiency with office software, digital documents, email communication, and basic computer operations.</p>
+                </div>
+                
+                <div class="skill-badge glass-card p-6 rounded-2xl">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Problem-Solving Ability</h3>
+                    <p class="text-gray-600">Initiative in identifying issues and searching for practical and lawful solutions.</p>
+                </div>
+                
+                <div class="skill-badge glass-card p-6 rounded-2xl">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Learning Adaptability</h3>
+                    <p class="text-gray-600">Willingness to learn new tools, systems, and procedures when required.</p>
+                </div>
+                
+                <div class="skill-badge glass-card p-6 rounded-2xl">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Time & Task Management</h3>
+                    <p class="text-gray-600">Responsible handling of tasks step by step with keen attention to detail.</p>
+                </div>
+                
+                <div class="skill-badge glass-card p-6 rounded-2xl">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Rules & Procedures</h3>
+                    <p class="text-gray-600">Understanding the importance of following official guidelines and structured processes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section id="goals" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center section-title text-white">Goals & Aspirations</h2>
+            <div class="h-16"></div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 rounded-3xl">
+                    <h3 class="text-2xl font-bold mb-6 gradient-text">Short-Term Goals</h3>
+                    <div class="space-y-6">
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">Technical Skills Enhancement</h4>
+                            <p class="text-gray-600">Improve technical and computer-based skills through continuous practice and learning.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">Communication Excellence</h4>
+                            <p class="text-gray-600">Strengthen communication and professional writing abilities for better collaboration.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">Practical Knowledge</h4>
+                            <p class="text-gray-600">Gain hands-on experience through education and real-world applications.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-8 rounded-3xl">
+                    <h3 class="text-2xl font-bold mb-6 gradient-text">Long-Term Goals</h3>
+                    <div class="space-y-6">
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">Professional Career</h4>
+                            <p class="text-gray-600">Build a stable and respected professional career in my chosen field.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">Field Expertise</h4>
+                            <p class="text-gray-600">Become knowledgeable in administrative, technical, or service-oriented domains.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">Social Contribution</h4>
+                            <p class="text-gray-600">Contribute positively to society through responsible and ethical actions.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">Personal Independence</h4>
+                            <p class="text-gray-600">Achieve independence through skill development and dedicated hard work.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Attitude Section -->
+    <section class="py-20 px-6 bg-white/50">
+        <div class="max-w-4xl mx-auto">
+            <div class="glass-card rounded-3xl p-8 md:p-12 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 section-title inline-block">Professional Attitude</h2>
+                <div class="h-16"></div>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    I approach work and learning with seriousness and integrity. Respect for rules, institutions, and ethical behavior forms the core of my professional attitude, including valuing honesty, accuracy, and responsibility in all forms of work and communication.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    I understand that success is built through consistent effort, continuous learning, and respectful interaction with others. This mindset forms a strong foundation for professional development and long-term achievement.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white section-title inline-block">Let's Connect</h2>
+            <div class="h-16"></div>
+            <p class="text-xl text-white/90 mb-12">
+                Ready to collaborate or discuss opportunities? I'm always open to meaningful conversations.
+            </p>
+            <div class="glass-card rounded-3xl p-8 md:p-12">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="p-6 rounded-xl bg-gradient-to-br from-purple-50 to-indigo-50 hover:shadow-lg transition">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <h3 class="font-bold mb-2">Email</h3>
+                        <p class="text-gray-600">contact@samitha.com</p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-gradient-to-br from-purple-50 to-indigo-50 hover:shadow-lg transition">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <h3 class="font-bold mb-2">Professional</h3>
+                        <p class="text-gray-600">LinkedIn Profile</p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-gradient-to-br from-purple-50 to-indigo-50 hover:shadow-lg transition">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <h3 class="font-bold mb-2">Location</h3>
+                        <p class="text-gray-600">Available Globally</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 bg-white/10 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto text-center text-white">
+            <p class="mb-4">&copy; 2026 Samitha Rathnayaka. All rights reserved.</p>
+            <p class="text-sm text-white/70">Built with discipline, designed with purpose.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card, .skill-badge').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
